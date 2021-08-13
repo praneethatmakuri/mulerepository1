@@ -29,6 +29,19 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+				        <cloudHubDeployment>
+						    <uri>https://anypoint.mulesoft.com</uri>
+						    <username>praneethavsr</username>
+						    <password>Lionpraneeth123+</password>
+						    <environment>Sandbox</environment>
+						    <muleVersion>4.3.0</muleVersion>
+						    <workers>1</workers>
+						    <workerType>Micro</workerType>
+						    <applicationName>muleapp</applicationName>
+						    <objectStoreV2>true</objectStoreV2>
+					    </cloudHubDeployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -46,9 +59,14 @@
 			<version>1.2.1</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
+		<dependency>
+		<groupId>org.sonarsource.scanner.maven</groupId>
+			<artifactId>sonar-maven-plugin</artifactId>
+			<version>3.6.1.1688</version>
+		</dependency>	
 	</dependencies>
 
-	<repositories>
+ <repositories>
 		<repository>
 			<id>anypoint-exchange-v2</id>
 			<name>Anypoint Exchange</name>
